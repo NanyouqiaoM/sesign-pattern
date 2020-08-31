@@ -1,0 +1,25 @@
+package com.sesign.pattern.creational.factory;
+
+import com.sesign.pattern.creational.factory.color.Color;
+import com.sesign.pattern.creational.factory.shape.*;
+
+public class ShapeFactory extends AbstractFactory{
+    @Override
+    public Color getColor(String color) {
+        return null;
+    }
+
+    public Shape getShape(String shapeType){
+        if(shapeType == null){
+            return null;
+        }
+        if(shapeType.equalsIgnoreCase("CIRCLE")){
+            return new Circle();
+        } else if(shapeType.equalsIgnoreCase("RECTANGLE")){
+            return new Rectangle();
+        } else if(shapeType.equalsIgnoreCase("SQUARE")){
+            return new Square();
+        }
+        return null;
+    }
+}
